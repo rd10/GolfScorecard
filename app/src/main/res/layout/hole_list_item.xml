@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="hole"
+            type="com.example.golfscorecard.Hole" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/holeListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#494646"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+
+        <TextView
+            android:id="@+id/scoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@{String.valueOf(hole.label)}"
+            android:textColor="#FFFFFF"
+            tools:text="Score" />
+
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@+id/buttonSubtract"
+            android:text="+" />
+
+
+        <Button
+            android:id="@+id/buttonSubtract"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/holeScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@+id/buttonAdd"
+            android:text="@{String.valueOf(hole.strokeCount)}"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</layout>
